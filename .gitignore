@@ -1,0 +1,54 @@
+# CMake
+CMakeCache.txt
+CMakeFiles/
+CMakeDumps/
+Makefile
+Makefile2
+cmake_install.cmake
+CTestTestfile.cmake
+Testing/
+
+# Build Directories
+/build/
+
+# Compiled Object Files
+*.o
+*.a
+*.so
+*.dll
+*.dylib
+*.obj
+
+# Executable Files
+*.exe
+*.out
+*.app
+
+# IDE and Editor Directories
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+*~
+*.bak
+*.tmp
+*.swp
+
+# Google Test (googletest)
+googletest/
+googlemock/
+
+# Dependency Directories (if using external dependencies)
+_deps/
+
+# Generated Files
+*.log
+*.d
+*.cxx
+*.gch
+*.gcda
+*.gcno
