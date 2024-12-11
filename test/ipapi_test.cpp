@@ -4,6 +4,7 @@
 // Test the `query_ip` function
 TEST(IPAPITest, QueryIP) {
     ipapi::IPInfo ip_info = ipapi::query_ip("8.8.8.8");
+    std::cout << "Library version: " << PROJECT_VERSION << std::endl;
 
     // String comparisons for the fields
     EXPECT_EQ(ip_info.ip, "8.8.8.8");

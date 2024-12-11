@@ -4,6 +4,7 @@
 #include <vector>
 #include <curl/curl.h>
 #include <json.hpp>
+#include <version.h>
 
 namespace ipapi {
 

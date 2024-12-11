@@ -5,6 +5,36 @@ project(ipapi-cpp)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Fetch the latest Git tag as the project version
+find_package(Git REQUIRED)
+execute_process(
+    COMMAND git describe --tags --abbrev=0
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    OUTPUT_VARIABLE GIT_TAG
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+
+if(GIT_TAG)
+    string(REGEX MATCH "([0-9]+)\\.([0-9]+)\\.([0-9]+)" VERSION_MATCH ${GIT_TAG})
+    if(VERSION_MATCH)
+        set(PROJECT_VERSION ${GIT_TAG})
+    else()
+        set(PROJECT_VERSION "0.0.0") # Default version if no valid tag is found
+    endif()
+else()
+    set(PROJECT_VERSION "0.0.0") # Default version if Git is unavailable
+endif()
+
+# Display the version
+message(STATUS "Project version: ${PROJECT_VERSION}")
+
+# Configure the version header
+configure_file(
+    ${CMAKE_SOURCE_DIR}/include/version.h.in
+    ${CMAKE_BINARY_DIR}/version.h
+)
+include_directories(${CMAKE_BINARY_DIR})
+
 # Include GoogleTest via FetchContent
 include(FetchContent)
 FetchContent_Declare(
