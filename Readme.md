@@ -191,13 +191,17 @@ Fetches the public IP address of the current machine.
 
 To run tests for this library, include and execute the `tests.cpp` file:
 ```bash
-g++ -o tests ipapi.cpp tests.cpp -lcurl -std=c++17
-./tests
+# initialize the cmake build first
+cmake -S . -B build
+
+# Build and test
+cmake --build build
+cd build && ctest
 ```
 
 ## Contributing
 
-Contributions are welcome! Feel free to open issues or submit pull requests on the [GitHub repository](https://github.com/ipqwery/ipapi).
+Contributions are welcome! Feel free to open issues or submit pull requests on the [GitHub repository](https://github.com/rezwanahmedsami/ipapi-cpp).
 
 ## License
 

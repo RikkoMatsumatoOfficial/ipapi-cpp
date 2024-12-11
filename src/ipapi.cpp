@@ -128,7 +128,7 @@ namespace ipapi {
         std::string ip;
         CURL* curl = curl_easy_init();
         if (curl) {
-            curl_easy_setopt(curl, CURLOPT_URL, BASE_URL);
+            curl_easy_setopt(curl, CURLOPT_URL, BASE_URL.c_str());
             curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
             curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
             curl_easy_setopt(curl, CURLOPT_WRITEDATA, &ip);
