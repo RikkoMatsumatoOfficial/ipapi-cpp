@@ -2,6 +2,8 @@
 
 A C++ library to query IP addresses using the [ipquery.io](https://ipquery.io) API.
 
+P.S: Soon will be Qt6 version of ipapi!!! Thanks for Reading This!!!
+
 ## Features
 
 - Query details for a specific IP address
